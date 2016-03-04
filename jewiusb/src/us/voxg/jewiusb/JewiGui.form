@@ -1,0 +1,1627 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="menubar">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="file_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="File"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="file_menuActionPerformed"/>
+          </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="file_open_item">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Open Sysex File..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="file_open_itemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="file_save_item">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Save Sysex File..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="file_save_itemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="file_separator">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="file_exit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Exit"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="file_exitActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="midi_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="MIDI"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="midi_menuActionPerformed"/>
+          </Events>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="midi_in_menu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="MIDI Input Device"/>
+              </Properties>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="midi_out_menu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="MIDI output Device"/>
+              </Properties>
+            </Menu>
+            <MenuItem class="javax.swing.JMenuItem" name="midi_send_item">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Send Config to EWI"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="midi_receive_item">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Receive Config From EWI"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="midi_separator">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="midi_refresh_item">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Refresh MIDI Device List"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="midi_refresh_itemActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="help_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Help"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="help_online">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Online Manual"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="help_onlineActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="help_about_item">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="About..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="help_about_itemActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="EWI-USB Configuration Tool"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="menubar"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="status" max="32767" attributes="0"/>
+          <Component id="tab_pane" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="tab_pane" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="status" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="status">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Status messages..."/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JTabbedPane" name="tab_pane">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="setup_tab">
+          <Properties>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[400, 225]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Setup">
+                <Property name="tabTitle" type="java.lang.String" value="Setup"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lbl_breath_gain" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="lbl_bite_gain" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="lbl_bite_ac_gain" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="lbl_pitch_bend_gain" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lbl_key_delay" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="pitch_bend_gain_slider" alignment="0" pref="294" max="32767" attributes="0"/>
+                          <Component id="bite_ac_gain_slider" alignment="0" max="32767" attributes="0"/>
+                          <Component id="bite_gain_slider" alignment="0" max="32767" attributes="0"/>
+                          <Component id="key_delay_slider" max="32767" attributes="0"/>
+                          <Component id="breath_gain_slider" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="breath_gain_slider" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_breath_gain" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_bite_gain" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="bite_gain_slider" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_bite_ac_gain" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="bite_ac_gain_slider" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_pitch_bend_gain" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="pitch_bend_gain_slider" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_key_delay" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="key_delay_slider" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lbl_breath_gain">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Breath Gain"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_bite_gain">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Bite Gain"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_bite_ac_gain">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Bite AC Gain"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_pitch_bend_gain">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Pitch Bend Gain"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_key_delay">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Key Delay"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="breath_gain_slider">
+              <Properties>
+                <Property name="maximum" type="int" value="127"/>
+                <Property name="value" type="int" value="64"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="breath_gain_sliderStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSlider" name="bite_gain_slider">
+              <Properties>
+                <Property name="maximum" type="int" value="127"/>
+                <Property name="value" type="int" value="64"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="bite_gain_sliderStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSlider" name="bite_ac_gain_slider">
+              <Properties>
+                <Property name="maximum" type="int" value="127"/>
+                <Property name="value" type="int" value="64"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="bite_ac_gain_sliderStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSlider" name="pitch_bend_gain_slider">
+              <Properties>
+                <Property name="maximum" type="int" value="127"/>
+                <Property name="value" type="int" value="64"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="pitch_bend_gain_sliderStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSlider" name="key_delay_slider">
+              <Properties>
+                <Property name="maximum" type="int" value="15"/>
+                <Property name="value" type="int" value="8"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="key_delay_sliderStateChanged"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="performance_tab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Performance">
+                <Property name="tabTitle" type="java.lang.String" value="Performance"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_velocity" alignment="2" max="-2" attributes="0"/>
+                          <Component id="lbl_midi_channel" alignment="2" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="lbl_fingering" alignment="2" max="-2" attributes="0"/>
+                          <Component id="lbl_transpose" alignment="2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="midi_channel_combo" max="32767" attributes="0"/>
+                          <Component id="fingering_combo" pref="308" max="32767" attributes="0"/>
+                          <Component id="transpose_combo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="velocity_combo" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_midi_channel" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="midi_channel_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="fingering_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_fingering" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="transpose_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_transpose" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbl_velocity" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="velocity_combo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lbl_midi_channel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="MIDI Channel"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_fingering">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Fingering"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_transpose">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Transpose"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_velocity">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Velocity"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="midi_channel_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="16">
+                    <StringItem index="0" value="1"/>
+                    <StringItem index="1" value="2"/>
+                    <StringItem index="2" value="3"/>
+                    <StringItem index="3" value="4"/>
+                    <StringItem index="4" value="5"/>
+                    <StringItem index="5" value="6"/>
+                    <StringItem index="6" value="7"/>
+                    <StringItem index="7" value="8"/>
+                    <StringItem index="8" value="9"/>
+                    <StringItem index="9" value="10"/>
+                    <StringItem index="10" value="11"/>
+                    <StringItem index="11" value="12"/>
+                    <StringItem index="12" value="13"/>
+                    <StringItem index="13" value="14"/>
+                    <StringItem index="14" value="15"/>
+                    <StringItem index="15" value="16"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="midi_channel_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="fingering_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="0 - EWI"/>
+                    <StringItem index="1" value="1 - Saxophone"/>
+                    <StringItem index="2" value="2 - Flute"/>
+                    <StringItem index="3" value="3 - Oboe"/>
+                    <StringItem index="4" value="4 - EVI Valve 1"/>
+                    <StringItem index="5" value="5 - EVI Valve 2"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fingering_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="transpose_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="60">
+                    <StringItem index="0" value="F# 1"/>
+                    <StringItem index="1" value="G 1"/>
+                    <StringItem index="2" value="G# 1"/>
+                    <StringItem index="3" value="A 1"/>
+                    <StringItem index="4" value="A# 1"/>
+                    <StringItem index="5" value="B 1"/>
+                    <StringItem index="6" value="C 2"/>
+                    <StringItem index="7" value="C# 2"/>
+                    <StringItem index="8" value="D 2"/>
+                    <StringItem index="9" value="D# 2"/>
+                    <StringItem index="10" value="E 2"/>
+                    <StringItem index="11" value="F 2"/>
+                    <StringItem index="12" value="F# 2"/>
+                    <StringItem index="13" value="G 2"/>
+                    <StringItem index="14" value="G# 2"/>
+                    <StringItem index="15" value="A 2"/>
+                    <StringItem index="16" value="A# 2"/>
+                    <StringItem index="17" value="B 2"/>
+                    <StringItem index="18" value="C 3"/>
+                    <StringItem index="19" value="C# 3"/>
+                    <StringItem index="20" value="D 3"/>
+                    <StringItem index="21" value="D# 3"/>
+                    <StringItem index="22" value="E 3"/>
+                    <StringItem index="23" value="F 3"/>
+                    <StringItem index="24" value="F# 3"/>
+                    <StringItem index="25" value="G 3"/>
+                    <StringItem index="26" value="G# 3"/>
+                    <StringItem index="27" value="A 3"/>
+                    <StringItem index="28" value="A# 3"/>
+                    <StringItem index="29" value="B 3"/>
+                    <StringItem index="30" value="C 4"/>
+                    <StringItem index="31" value="C# 4"/>
+                    <StringItem index="32" value="D 4"/>
+                    <StringItem index="33" value="D# 4"/>
+                    <StringItem index="34" value="E 4"/>
+                    <StringItem index="35" value="F 4"/>
+                    <StringItem index="36" value="F# 4"/>
+                    <StringItem index="37" value="G 4"/>
+                    <StringItem index="38" value="G# 4"/>
+                    <StringItem index="39" value="A 4"/>
+                    <StringItem index="40" value="A# 4"/>
+                    <StringItem index="41" value="B 4"/>
+                    <StringItem index="42" value="C 5"/>
+                    <StringItem index="43" value="C# 5"/>
+                    <StringItem index="44" value="D 5"/>
+                    <StringItem index="45" value="D# 5"/>
+                    <StringItem index="46" value="E 5"/>
+                    <StringItem index="47" value="F 5"/>
+                    <StringItem index="48" value="F# 5"/>
+                    <StringItem index="49" value="G 5"/>
+                    <StringItem index="50" value="G# 5"/>
+                    <StringItem index="51" value="A 5"/>
+                    <StringItem index="52" value="A# 5"/>
+                    <StringItem index="53" value="B 5"/>
+                    <StringItem index="54" value="C 6"/>
+                    <StringItem index="55" value="C# 6"/>
+                    <StringItem index="56" value="D 6"/>
+                    <StringItem index="57" value="D# 6"/>
+                    <StringItem index="58" value="E 6"/>
+                    <StringItem index="59" value="F 6"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="transpose_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="velocity_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="128">
+                    <StringItem index="0" value="0 (Dynamic)"/>
+                    <StringItem index="1" value="1 (Fixed)"/>
+                    <StringItem index="2" value="2 (Fixed)"/>
+                    <StringItem index="3" value="3 (Fixed)"/>
+                    <StringItem index="4" value="4 (Fixed)"/>
+                    <StringItem index="5" value="5 (Fixed)"/>
+                    <StringItem index="6" value="6 (Fixed)"/>
+                    <StringItem index="7" value="7 (Fixed)"/>
+                    <StringItem index="8" value="8 (Fixed)"/>
+                    <StringItem index="9" value="9 (Fixed)"/>
+                    <StringItem index="10" value="10 (Fixed)"/>
+                    <StringItem index="11" value="11 (Fixed)"/>
+                    <StringItem index="12" value="12 (Fixed)"/>
+                    <StringItem index="13" value="13 (Fixed)"/>
+                    <StringItem index="14" value="14 (Fixed)"/>
+                    <StringItem index="15" value="15 (Fixed)"/>
+                    <StringItem index="16" value="16 (Fixed)"/>
+                    <StringItem index="17" value="17 (Fixed)"/>
+                    <StringItem index="18" value="18 (Fixed)"/>
+                    <StringItem index="19" value="19 (Fixed)"/>
+                    <StringItem index="20" value="20 (Fixed)"/>
+                    <StringItem index="21" value="21 (Fixed)"/>
+                    <StringItem index="22" value="22 (Fixed)"/>
+                    <StringItem index="23" value="23 (Fixed)"/>
+                    <StringItem index="24" value="24 (Fixed)"/>
+                    <StringItem index="25" value="25 (Fixed)"/>
+                    <StringItem index="26" value="26 (Fixed)"/>
+                    <StringItem index="27" value="27 (Fixed)"/>
+                    <StringItem index="28" value="28 (Fixed)"/>
+                    <StringItem index="29" value="29 (Fixed)"/>
+                    <StringItem index="30" value="30 (Fixed)"/>
+                    <StringItem index="31" value="31 (Fixed)"/>
+                    <StringItem index="32" value="32 (Fixed)"/>
+                    <StringItem index="33" value="33 (Fixed)"/>
+                    <StringItem index="34" value="34 (Fixed)"/>
+                    <StringItem index="35" value="35 (Fixed)"/>
+                    <StringItem index="36" value="36 (Fixed)"/>
+                    <StringItem index="37" value="37 (Fixed)"/>
+                    <StringItem index="38" value="38 (Fixed)"/>
+                    <StringItem index="39" value="39 (Fixed)"/>
+                    <StringItem index="40" value="40 (Fixed)"/>
+                    <StringItem index="41" value="41 (Fixed)"/>
+                    <StringItem index="42" value="42 (Fixed)"/>
+                    <StringItem index="43" value="43 (Fixed)"/>
+                    <StringItem index="44" value="44 (Fixed)"/>
+                    <StringItem index="45" value="45 (Fixed)"/>
+                    <StringItem index="46" value="46 (Fixed)"/>
+                    <StringItem index="47" value="47 (Fixed)"/>
+                    <StringItem index="48" value="48 (Fixed)"/>
+                    <StringItem index="49" value="49 (Fixed)"/>
+                    <StringItem index="50" value="50 (Fixed)"/>
+                    <StringItem index="51" value="51 (Fixed)"/>
+                    <StringItem index="52" value="52 (Fixed)"/>
+                    <StringItem index="53" value="53 (Fixed)"/>
+                    <StringItem index="54" value="54 (Fixed)"/>
+                    <StringItem index="55" value="55 (Fixed)"/>
+                    <StringItem index="56" value="56 (Fixed)"/>
+                    <StringItem index="57" value="57 (Fixed)"/>
+                    <StringItem index="58" value="58 (Fixed)"/>
+                    <StringItem index="59" value="59 (Fixed)"/>
+                    <StringItem index="60" value="60 (Fixed)"/>
+                    <StringItem index="61" value="61 (Fixed)"/>
+                    <StringItem index="62" value="62 (Fixed)"/>
+                    <StringItem index="63" value="63 (Fixed)"/>
+                    <StringItem index="64" value="64 (Fixed)"/>
+                    <StringItem index="65" value="65 (Fixed)"/>
+                    <StringItem index="66" value="66 (Fixed)"/>
+                    <StringItem index="67" value="67 (Fixed)"/>
+                    <StringItem index="68" value="68 (Fixed)"/>
+                    <StringItem index="69" value="69 (Fixed)"/>
+                    <StringItem index="70" value="70 (Fixed)"/>
+                    <StringItem index="71" value="71 (Fixed)"/>
+                    <StringItem index="72" value="72 (Fixed)"/>
+                    <StringItem index="73" value="73 (Fixed)"/>
+                    <StringItem index="74" value="74 (Fixed)"/>
+                    <StringItem index="75" value="75 (Fixed)"/>
+                    <StringItem index="76" value="76 (Fixed)"/>
+                    <StringItem index="77" value="77 (Fixed)"/>
+                    <StringItem index="78" value="78 (Fixed)"/>
+                    <StringItem index="79" value="79 (Fixed)"/>
+                    <StringItem index="80" value="80 (Fixed)"/>
+                    <StringItem index="81" value="81 (Fixed)"/>
+                    <StringItem index="82" value="82 (Fixed)"/>
+                    <StringItem index="83" value="83 (Fixed)"/>
+                    <StringItem index="84" value="84 (Fixed)"/>
+                    <StringItem index="85" value="85 (Fixed)"/>
+                    <StringItem index="86" value="86 (Fixed)"/>
+                    <StringItem index="87" value="87 (Fixed)"/>
+                    <StringItem index="88" value="88 (Fixed)"/>
+                    <StringItem index="89" value="89 (Fixed)"/>
+                    <StringItem index="90" value="90 (Fixed)"/>
+                    <StringItem index="91" value="91 (Fixed)"/>
+                    <StringItem index="92" value="92 (Fixed)"/>
+                    <StringItem index="93" value="93 (Fixed)"/>
+                    <StringItem index="94" value="94 (Fixed)"/>
+                    <StringItem index="95" value="95 (Fixed)"/>
+                    <StringItem index="96" value="96 (Fixed)"/>
+                    <StringItem index="97" value="97 (Fixed)"/>
+                    <StringItem index="98" value="98 (Fixed)"/>
+                    <StringItem index="99" value="99 (Fixed)"/>
+                    <StringItem index="100" value="100 (Fixed)"/>
+                    <StringItem index="101" value="101 (Fixed)"/>
+                    <StringItem index="102" value="102 (Fixed)"/>
+                    <StringItem index="103" value="103 (Fixed)"/>
+                    <StringItem index="104" value="104 (Fixed)"/>
+                    <StringItem index="105" value="105 (Fixed)"/>
+                    <StringItem index="106" value="106 (Fixed)"/>
+                    <StringItem index="107" value="107 (Fixed)"/>
+                    <StringItem index="108" value="108 (Fixed)"/>
+                    <StringItem index="109" value="109 (Fixed)"/>
+                    <StringItem index="110" value="110 (Fixed)"/>
+                    <StringItem index="111" value="111 (Fixed)"/>
+                    <StringItem index="112" value="112 (Fixed)"/>
+                    <StringItem index="113" value="113 (Fixed)"/>
+                    <StringItem index="114" value="114 (Fixed)"/>
+                    <StringItem index="115" value="115 (Fixed)"/>
+                    <StringItem index="116" value="116 (Fixed)"/>
+                    <StringItem index="117" value="117 (Fixed)"/>
+                    <StringItem index="118" value="118 (Fixed)"/>
+                    <StringItem index="119" value="119 (Fixed)"/>
+                    <StringItem index="120" value="120 (Fixed)"/>
+                    <StringItem index="121" value="121 (Fixed)"/>
+                    <StringItem index="122" value="122 (Fixed)"/>
+                    <StringItem index="123" value="123 (Fixed)"/>
+                    <StringItem index="124" value="124 (Fixed)"/>
+                    <StringItem index="125" value="125 (Fixed)"/>
+                    <StringItem index="126" value="126 (Fixed)"/>
+                    <StringItem index="127" value="127 (Fixed)"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="velocity_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="controller_tab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Controller">
+                <Property name="tabTitle" type="java.lang.String" value="Controller"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lbl_pitch_bend_down" pref="90" max="32767" attributes="0"/>
+                          <Component id="lbl_pitch_bend_up" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_bite_cc2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_bite_cc1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_breath_cc2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_breath_cc1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="breath_cc1_combo" pref="298" max="32767" attributes="0"/>
+                          <Component id="breath_cc2_combo" pref="0" max="32767" attributes="0"/>
+                          <Component id="bite_cc1_combo" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="bite_cc2_combo" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="pitch_bend_up_combo" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="pitch_bend_down_combo" alignment="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_breath_cc1" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="breath_cc1_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_breath_cc2" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="breath_cc2_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_bite_cc1" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="bite_cc1_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_bite_cc2" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="bite_cc2_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_pitch_bend_up" alignment="2" min="-2" pref="14" max="-2" attributes="0"/>
+                          <Component id="pitch_bend_up_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="lbl_pitch_bend_down" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="pitch_bend_down_combo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="32" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lbl_breath_cc1">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Breath CC 1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_breath_cc2">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Breath CC 2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_bite_cc1">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Bite CC 1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_bite_cc2">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Bite CC 2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_pitch_bend_up">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Pitch Bend Up"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_pitch_bend_down">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Pitch Bend Down"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="breath_cc1_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="128">
+                    <StringItem index="0" value="0 Off"/>
+                    <StringItem index="1" value="1 Modulation Wheel or Lever"/>
+                    <StringItem index="2" value="2 Breath Controller"/>
+                    <StringItem index="3" value="3 "/>
+                    <StringItem index="4" value="4 Foot Controller"/>
+                    <StringItem index="5" value="5 Portamento Time"/>
+                    <StringItem index="6" value="6 Data Entry MSB"/>
+                    <StringItem index="7" value="7 Channel Volume"/>
+                    <StringItem index="8" value="8 Balance"/>
+                    <StringItem index="9" value="9 "/>
+                    <StringItem index="10" value="10 Pan"/>
+                    <StringItem index="11" value="11 Expression Controller"/>
+                    <StringItem index="12" value="12 Effect Control 1"/>
+                    <StringItem index="13" value="13 Effect Control 2"/>
+                    <StringItem index="14" value="14 "/>
+                    <StringItem index="15" value="15 "/>
+                    <StringItem index="16" value="16 General Purpose Controller 1"/>
+                    <StringItem index="17" value="17 General Purpose Controller 2"/>
+                    <StringItem index="18" value="18 General Purpose Controller 3"/>
+                    <StringItem index="19" value="19 General Purpose Controller 4"/>
+                    <StringItem index="20" value="20 "/>
+                    <StringItem index="21" value="21 "/>
+                    <StringItem index="22" value="22 "/>
+                    <StringItem index="23" value="23 "/>
+                    <StringItem index="24" value="24 "/>
+                    <StringItem index="25" value="25 "/>
+                    <StringItem index="26" value="26 "/>
+                    <StringItem index="27" value="27 "/>
+                    <StringItem index="28" value="28 "/>
+                    <StringItem index="29" value="29 "/>
+                    <StringItem index="30" value="30 "/>
+                    <StringItem index="31" value="31 "/>
+                    <StringItem index="32" value="32 LSB for Control 0 (Bank Select)"/>
+                    <StringItem index="33" value="33 LSB for Control 1 (Modulation Wheel or Lever)"/>
+                    <StringItem index="34" value="34 LSB for Control 2 (Breath Controller)"/>
+                    <StringItem index="35" value="35 "/>
+                    <StringItem index="36" value="36 LSB for Control 4 (Foot Controller)"/>
+                    <StringItem index="37" value="37 LSB for Control 5 (Portamento Time)"/>
+                    <StringItem index="38" value="38 LSB for Control 6 (Data Entry)"/>
+                    <StringItem index="39" value="39 LSB for Control 7 (Channel Volume)"/>
+                    <StringItem index="40" value="40 LSB for Control 8 (Balance)"/>
+                    <StringItem index="41" value="41 "/>
+                    <StringItem index="42" value="42 LSB for Control 10 (Pan)"/>
+                    <StringItem index="43" value="43 LSB for Control 11 (Expression Controller)"/>
+                    <StringItem index="44" value="44 LSB for Control 12 (Effect control 1)"/>
+                    <StringItem index="45" value="45 LSB for Control 13 (Effect control 2)"/>
+                    <StringItem index="46" value="46 "/>
+                    <StringItem index="47" value="47 "/>
+                    <StringItem index="48" value="48 LSB for Control 16 (General Purpose Controller 1)"/>
+                    <StringItem index="49" value="49 LSB for Control 17 (General Purpose Controller 2)"/>
+                    <StringItem index="50" value="50 LSB for Control 18 (General Purpose Controller 3)"/>
+                    <StringItem index="51" value="51 LSB for Control 19 (General Purpose Controller 4)"/>
+                    <StringItem index="52" value="52 "/>
+                    <StringItem index="53" value="53 "/>
+                    <StringItem index="54" value="54 "/>
+                    <StringItem index="55" value="55 "/>
+                    <StringItem index="56" value="56 "/>
+                    <StringItem index="57" value="57 "/>
+                    <StringItem index="58" value="58 "/>
+                    <StringItem index="59" value="59 "/>
+                    <StringItem index="60" value="60 "/>
+                    <StringItem index="61" value="61 "/>
+                    <StringItem index="62" value="62 "/>
+                    <StringItem index="63" value="63 "/>
+                    <StringItem index="64" value="64 Damper Pedal on/off (Sustain)"/>
+                    <StringItem index="65" value="65 Portamento On/Off"/>
+                    <StringItem index="66" value="66 Sostenuto On/Off"/>
+                    <StringItem index="67" value="67 Soft Pedal On/Off"/>
+                    <StringItem index="68" value="68 Legato Footswitch"/>
+                    <StringItem index="69" value="69 Hold 2"/>
+                    <StringItem index="70" value="70 Sound Controller 1 (default: Sound Variation)"/>
+                    <StringItem index="71" value="71 Sound Controller 2 (default: Timbre/Harmonic Intens.)"/>
+                    <StringItem index="72" value="72 Sound Controller 3 (default: Release Time)"/>
+                    <StringItem index="73" value="73 Sound Controller 4 (default: Attack Time)"/>
+                    <StringItem index="74" value="74 Sound Controller 5 (default: Brightness)"/>
+                    <StringItem index="75" value="75 Sound Controller 6 (default: Decay Time - see MMA RP-021)"/>
+                    <StringItem index="76" value="76 Sound Controller 7 (default: Vibrato Rate - see MMA RP-021)"/>
+                    <StringItem index="77" value="77 Sound Controller 8 (default: Vibrato Depth - see MMA RP-021)"/>
+                    <StringItem index="78" value="78 Sound Controller 9 (default: Vibrato Delay - see MMA RP-021)"/>
+                    <StringItem index="79" value="79 Sound Controller 10 (default undefined - see MMA RP-021)"/>
+                    <StringItem index="80" value="80 General Purpose Controller 5"/>
+                    <StringItem index="81" value="81 General Purpose Controller 6"/>
+                    <StringItem index="82" value="82 General Purpose Controller 7"/>
+                    <StringItem index="83" value="83 General Purpose Controller 8"/>
+                    <StringItem index="84" value="84 Portamento Control"/>
+                    <StringItem index="85" value="85 "/>
+                    <StringItem index="86" value="86 "/>
+                    <StringItem index="87" value="87 "/>
+                    <StringItem index="88" value="88 "/>
+                    <StringItem index="89" value="89 "/>
+                    <StringItem index="90" value="90 "/>
+                    <StringItem index="91" value="91 Effects 1 Depth (default: Reverb Send Level - see MMA RP-023)"/>
+                    <StringItem index="92" value="92 Effects 2 Depth"/>
+                    <StringItem index="93" value="93 Effects 3 Depth (default: Chorus Send Level - see MMA RP-023)"/>
+                    <StringItem index="94" value="94 Effects 4 Depth"/>
+                    <StringItem index="95" value="95 Effects 5 Depth"/>
+                    <StringItem index="96" value="96 Data Increment (Data Entry +1) (see MMA RP-018)"/>
+                    <StringItem index="97" value="97 Data Decrement (Data Entry -1) (see MMA RP-018)"/>
+                    <StringItem index="98" value="98 Non-Registered Parameter Number (NRPN) - LSB"/>
+                    <StringItem index="99" value="99 Non-Registered Parameter Number (NRPN) - MSB"/>
+                    <StringItem index="100" value="100 Registered Parameter Number (RPN) - LSB*"/>
+                    <StringItem index="101" value="101 Registered Parameter Number (RPN) - MSB*"/>
+                    <StringItem index="102" value="102 "/>
+                    <StringItem index="103" value="103 "/>
+                    <StringItem index="104" value="104 "/>
+                    <StringItem index="105" value="105 "/>
+                    <StringItem index="106" value="106 "/>
+                    <StringItem index="107" value="107 "/>
+                    <StringItem index="108" value="108 "/>
+                    <StringItem index="109" value="109 "/>
+                    <StringItem index="110" value="110 "/>
+                    <StringItem index="111" value="111 "/>
+                    <StringItem index="112" value="112 "/>
+                    <StringItem index="113" value="113 "/>
+                    <StringItem index="114" value="114 "/>
+                    <StringItem index="115" value="115 "/>
+                    <StringItem index="116" value="116 "/>
+                    <StringItem index="117" value="117 "/>
+                    <StringItem index="118" value="118 "/>
+                    <StringItem index="119" value="119 "/>
+                    <StringItem index="120" value="120 (undefined EWI behavior)"/>
+                    <StringItem index="121" value="121 (undefined EWI behavior)"/>
+                    <StringItem index="122" value="122 (undefined EWI behavior)"/>
+                    <StringItem index="123" value="123 (undefined EWI behavior)"/>
+                    <StringItem index="124" value="124 (undefined EWI behavior)"/>
+                    <StringItem index="125" value="125 (undefined EWI behavior)"/>
+                    <StringItem index="126" value="126 (undefined EWI behavior)"/>
+                    <StringItem index="127" value="127 Aftertouch"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="breath_cc1_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="breath_cc2_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="128">
+                    <StringItem index="0" value="0 Off"/>
+                    <StringItem index="1" value="1 Modulation Wheel or Lever"/>
+                    <StringItem index="2" value="2 Breath Controller"/>
+                    <StringItem index="3" value="3 "/>
+                    <StringItem index="4" value="4 Foot Controller"/>
+                    <StringItem index="5" value="5 Portamento Time"/>
+                    <StringItem index="6" value="6 Data Entry MSB"/>
+                    <StringItem index="7" value="7 Channel Volume"/>
+                    <StringItem index="8" value="8 Balance"/>
+                    <StringItem index="9" value="9 "/>
+                    <StringItem index="10" value="10 Pan"/>
+                    <StringItem index="11" value="11 Expression Controller"/>
+                    <StringItem index="12" value="12 Effect Control 1"/>
+                    <StringItem index="13" value="13 Effect Control 2"/>
+                    <StringItem index="14" value="14 "/>
+                    <StringItem index="15" value="15 "/>
+                    <StringItem index="16" value="16 General Purpose Controller 1"/>
+                    <StringItem index="17" value="17 General Purpose Controller 2"/>
+                    <StringItem index="18" value="18 General Purpose Controller 3"/>
+                    <StringItem index="19" value="19 General Purpose Controller 4"/>
+                    <StringItem index="20" value="20 "/>
+                    <StringItem index="21" value="21 "/>
+                    <StringItem index="22" value="22 "/>
+                    <StringItem index="23" value="23 "/>
+                    <StringItem index="24" value="24 "/>
+                    <StringItem index="25" value="25 "/>
+                    <StringItem index="26" value="26 "/>
+                    <StringItem index="27" value="27 "/>
+                    <StringItem index="28" value="28 "/>
+                    <StringItem index="29" value="29 "/>
+                    <StringItem index="30" value="30 "/>
+                    <StringItem index="31" value="31 "/>
+                    <StringItem index="32" value="32 LSB for Control 0 (Bank Select)"/>
+                    <StringItem index="33" value="33 LSB for Control 1 (Modulation Wheel or Lever)"/>
+                    <StringItem index="34" value="34 LSB for Control 2 (Breath Controller)"/>
+                    <StringItem index="35" value="35 "/>
+                    <StringItem index="36" value="36 LSB for Control 4 (Foot Controller)"/>
+                    <StringItem index="37" value="37 LSB for Control 5 (Portamento Time)"/>
+                    <StringItem index="38" value="38 LSB for Control 6 (Data Entry)"/>
+                    <StringItem index="39" value="39 LSB for Control 7 (Channel Volume)"/>
+                    <StringItem index="40" value="40 LSB for Control 8 (Balance)"/>
+                    <StringItem index="41" value="41 "/>
+                    <StringItem index="42" value="42 LSB for Control 10 (Pan)"/>
+                    <StringItem index="43" value="43 LSB for Control 11 (Expression Controller)"/>
+                    <StringItem index="44" value="44 LSB for Control 12 (Effect control 1)"/>
+                    <StringItem index="45" value="45 LSB for Control 13 (Effect control 2)"/>
+                    <StringItem index="46" value="46 "/>
+                    <StringItem index="47" value="47 "/>
+                    <StringItem index="48" value="48 LSB for Control 16 (General Purpose Controller 1)"/>
+                    <StringItem index="49" value="49 LSB for Control 17 (General Purpose Controller 2)"/>
+                    <StringItem index="50" value="50 LSB for Control 18 (General Purpose Controller 3)"/>
+                    <StringItem index="51" value="51 LSB for Control 19 (General Purpose Controller 4)"/>
+                    <StringItem index="52" value="52 "/>
+                    <StringItem index="53" value="53 "/>
+                    <StringItem index="54" value="54 "/>
+                    <StringItem index="55" value="55 "/>
+                    <StringItem index="56" value="56 "/>
+                    <StringItem index="57" value="57 "/>
+                    <StringItem index="58" value="58 "/>
+                    <StringItem index="59" value="59 "/>
+                    <StringItem index="60" value="60 "/>
+                    <StringItem index="61" value="61 "/>
+                    <StringItem index="62" value="62 "/>
+                    <StringItem index="63" value="63 "/>
+                    <StringItem index="64" value="64 Damper Pedal on/off (Sustain)"/>
+                    <StringItem index="65" value="65 Portamento On/Off"/>
+                    <StringItem index="66" value="66 Sostenuto On/Off"/>
+                    <StringItem index="67" value="67 Soft Pedal On/Off"/>
+                    <StringItem index="68" value="68 Legato Footswitch"/>
+                    <StringItem index="69" value="69 Hold 2"/>
+                    <StringItem index="70" value="70 Sound Controller 1 (default: Sound Variation)"/>
+                    <StringItem index="71" value="71 Sound Controller 2 (default: Timbre/Harmonic Intens.)"/>
+                    <StringItem index="72" value="72 Sound Controller 3 (default: Release Time)"/>
+                    <StringItem index="73" value="73 Sound Controller 4 (default: Attack Time)"/>
+                    <StringItem index="74" value="74 Sound Controller 5 (default: Brightness)"/>
+                    <StringItem index="75" value="75 Sound Controller 6 (default: Decay Time - see MMA RP-021)"/>
+                    <StringItem index="76" value="76 Sound Controller 7 (default: Vibrato Rate - see MMA RP-021)"/>
+                    <StringItem index="77" value="77 Sound Controller 8 (default: Vibrato Depth - see MMA RP-021)"/>
+                    <StringItem index="78" value="78 Sound Controller 9 (default: Vibrato Delay - see MMA RP-021)"/>
+                    <StringItem index="79" value="79 Sound Controller 10 (default undefined - see MMA RP-021)"/>
+                    <StringItem index="80" value="80 General Purpose Controller 5"/>
+                    <StringItem index="81" value="81 General Purpose Controller 6"/>
+                    <StringItem index="82" value="82 General Purpose Controller 7"/>
+                    <StringItem index="83" value="83 General Purpose Controller 8"/>
+                    <StringItem index="84" value="84 Portamento Control"/>
+                    <StringItem index="85" value="85 "/>
+                    <StringItem index="86" value="86 "/>
+                    <StringItem index="87" value="87 "/>
+                    <StringItem index="88" value="88 "/>
+                    <StringItem index="89" value="89 "/>
+                    <StringItem index="90" value="90 "/>
+                    <StringItem index="91" value="91 Effects 1 Depth (default: Reverb Send Level - see MMA RP-023)"/>
+                    <StringItem index="92" value="92 Effects 2 Depth"/>
+                    <StringItem index="93" value="93 Effects 3 Depth (default: Chorus Send Level - see MMA RP-023)"/>
+                    <StringItem index="94" value="94 Effects 4 Depth"/>
+                    <StringItem index="95" value="95 Effects 5 Depth"/>
+                    <StringItem index="96" value="96 Data Increment (Data Entry +1) (see MMA RP-018)"/>
+                    <StringItem index="97" value="97 Data Decrement (Data Entry -1) (see MMA RP-018)"/>
+                    <StringItem index="98" value="98 Non-Registered Parameter Number (NRPN) - LSB"/>
+                    <StringItem index="99" value="99 Non-Registered Parameter Number (NRPN) - MSB"/>
+                    <StringItem index="100" value="100 Registered Parameter Number (RPN) - LSB*"/>
+                    <StringItem index="101" value="101 Registered Parameter Number (RPN) - MSB*"/>
+                    <StringItem index="102" value="102 "/>
+                    <StringItem index="103" value="103 "/>
+                    <StringItem index="104" value="104 "/>
+                    <StringItem index="105" value="105 "/>
+                    <StringItem index="106" value="106 "/>
+                    <StringItem index="107" value="107 "/>
+                    <StringItem index="108" value="108 "/>
+                    <StringItem index="109" value="109 "/>
+                    <StringItem index="110" value="110 "/>
+                    <StringItem index="111" value="111 "/>
+                    <StringItem index="112" value="112 "/>
+                    <StringItem index="113" value="113 "/>
+                    <StringItem index="114" value="114 "/>
+                    <StringItem index="115" value="115 "/>
+                    <StringItem index="116" value="116 "/>
+                    <StringItem index="117" value="117 "/>
+                    <StringItem index="118" value="118 "/>
+                    <StringItem index="119" value="119 "/>
+                    <StringItem index="120" value="120 (undefined EWI behavior)"/>
+                    <StringItem index="121" value="121 (undefined EWI behavior)"/>
+                    <StringItem index="122" value="122 (undefined EWI behavior)"/>
+                    <StringItem index="123" value="123 (undefined EWI behavior)"/>
+                    <StringItem index="124" value="124 (undefined EWI behavior)"/>
+                    <StringItem index="125" value="125 (undefined EWI behavior)"/>
+                    <StringItem index="126" value="126 (undefined EWI behavior)"/>
+                    <StringItem index="127" value="127 Aftertouch"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="breath_cc2_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="bite_cc1_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="128">
+                    <StringItem index="0" value="0 Off"/>
+                    <StringItem index="1" value="1 Modulation Wheel or Lever"/>
+                    <StringItem index="2" value="2 Breath Controller"/>
+                    <StringItem index="3" value="3 "/>
+                    <StringItem index="4" value="4 Foot Controller"/>
+                    <StringItem index="5" value="5 Portamento Time"/>
+                    <StringItem index="6" value="6 Data Entry MSB"/>
+                    <StringItem index="7" value="7 Channel Volume"/>
+                    <StringItem index="8" value="8 Balance"/>
+                    <StringItem index="9" value="9 "/>
+                    <StringItem index="10" value="10 Pan"/>
+                    <StringItem index="11" value="11 Expression Controller"/>
+                    <StringItem index="12" value="12 Effect Control 1"/>
+                    <StringItem index="13" value="13 Effect Control 2"/>
+                    <StringItem index="14" value="14 "/>
+                    <StringItem index="15" value="15 "/>
+                    <StringItem index="16" value="16 General Purpose Controller 1"/>
+                    <StringItem index="17" value="17 General Purpose Controller 2"/>
+                    <StringItem index="18" value="18 General Purpose Controller 3"/>
+                    <StringItem index="19" value="19 General Purpose Controller 4"/>
+                    <StringItem index="20" value="20 "/>
+                    <StringItem index="21" value="21 "/>
+                    <StringItem index="22" value="22 "/>
+                    <StringItem index="23" value="23 "/>
+                    <StringItem index="24" value="24 "/>
+                    <StringItem index="25" value="25 "/>
+                    <StringItem index="26" value="26 "/>
+                    <StringItem index="27" value="27 "/>
+                    <StringItem index="28" value="28 "/>
+                    <StringItem index="29" value="29 "/>
+                    <StringItem index="30" value="30 "/>
+                    <StringItem index="31" value="31 "/>
+                    <StringItem index="32" value="32 LSB for Control 0 (Bank Select)"/>
+                    <StringItem index="33" value="33 LSB for Control 1 (Modulation Wheel or Lever)"/>
+                    <StringItem index="34" value="34 LSB for Control 2 (Breath Controller)"/>
+                    <StringItem index="35" value="35 "/>
+                    <StringItem index="36" value="36 LSB for Control 4 (Foot Controller)"/>
+                    <StringItem index="37" value="37 LSB for Control 5 (Portamento Time)"/>
+                    <StringItem index="38" value="38 LSB for Control 6 (Data Entry)"/>
+                    <StringItem index="39" value="39 LSB for Control 7 (Channel Volume)"/>
+                    <StringItem index="40" value="40 LSB for Control 8 (Balance)"/>
+                    <StringItem index="41" value="41 "/>
+                    <StringItem index="42" value="42 LSB for Control 10 (Pan)"/>
+                    <StringItem index="43" value="43 LSB for Control 11 (Expression Controller)"/>
+                    <StringItem index="44" value="44 LSB for Control 12 (Effect control 1)"/>
+                    <StringItem index="45" value="45 LSB for Control 13 (Effect control 2)"/>
+                    <StringItem index="46" value="46 "/>
+                    <StringItem index="47" value="47 "/>
+                    <StringItem index="48" value="48 LSB for Control 16 (General Purpose Controller 1)"/>
+                    <StringItem index="49" value="49 LSB for Control 17 (General Purpose Controller 2)"/>
+                    <StringItem index="50" value="50 LSB for Control 18 (General Purpose Controller 3)"/>
+                    <StringItem index="51" value="51 LSB for Control 19 (General Purpose Controller 4)"/>
+                    <StringItem index="52" value="52 "/>
+                    <StringItem index="53" value="53 "/>
+                    <StringItem index="54" value="54 "/>
+                    <StringItem index="55" value="55 "/>
+                    <StringItem index="56" value="56 "/>
+                    <StringItem index="57" value="57 "/>
+                    <StringItem index="58" value="58 "/>
+                    <StringItem index="59" value="59 "/>
+                    <StringItem index="60" value="60 "/>
+                    <StringItem index="61" value="61 "/>
+                    <StringItem index="62" value="62 "/>
+                    <StringItem index="63" value="63 "/>
+                    <StringItem index="64" value="64 Damper Pedal on/off (Sustain)"/>
+                    <StringItem index="65" value="65 Portamento On/Off"/>
+                    <StringItem index="66" value="66 Sostenuto On/Off"/>
+                    <StringItem index="67" value="67 Soft Pedal On/Off"/>
+                    <StringItem index="68" value="68 Legato Footswitch"/>
+                    <StringItem index="69" value="69 Hold 2"/>
+                    <StringItem index="70" value="70 Sound Controller 1 (default: Sound Variation)"/>
+                    <StringItem index="71" value="71 Sound Controller 2 (default: Timbre/Harmonic Intens.)"/>
+                    <StringItem index="72" value="72 Sound Controller 3 (default: Release Time)"/>
+                    <StringItem index="73" value="73 Sound Controller 4 (default: Attack Time)"/>
+                    <StringItem index="74" value="74 Sound Controller 5 (default: Brightness)"/>
+                    <StringItem index="75" value="75 Sound Controller 6 (default: Decay Time - see MMA RP-021)"/>
+                    <StringItem index="76" value="76 Sound Controller 7 (default: Vibrato Rate - see MMA RP-021)"/>
+                    <StringItem index="77" value="77 Sound Controller 8 (default: Vibrato Depth - see MMA RP-021)"/>
+                    <StringItem index="78" value="78 Sound Controller 9 (default: Vibrato Delay - see MMA RP-021)"/>
+                    <StringItem index="79" value="79 Sound Controller 10 (default undefined - see MMA RP-021)"/>
+                    <StringItem index="80" value="80 General Purpose Controller 5"/>
+                    <StringItem index="81" value="81 General Purpose Controller 6"/>
+                    <StringItem index="82" value="82 General Purpose Controller 7"/>
+                    <StringItem index="83" value="83 General Purpose Controller 8"/>
+                    <StringItem index="84" value="84 Portamento Control"/>
+                    <StringItem index="85" value="85 "/>
+                    <StringItem index="86" value="86 "/>
+                    <StringItem index="87" value="87 "/>
+                    <StringItem index="88" value="88 "/>
+                    <StringItem index="89" value="89 "/>
+                    <StringItem index="90" value="90 "/>
+                    <StringItem index="91" value="91 Effects 1 Depth (default: Reverb Send Level - see MMA RP-023)"/>
+                    <StringItem index="92" value="92 Effects 2 Depth"/>
+                    <StringItem index="93" value="93 Effects 3 Depth (default: Chorus Send Level - see MMA RP-023)"/>
+                    <StringItem index="94" value="94 Effects 4 Depth"/>
+                    <StringItem index="95" value="95 Effects 5 Depth"/>
+                    <StringItem index="96" value="96 Data Increment (Data Entry +1) (see MMA RP-018)"/>
+                    <StringItem index="97" value="97 Data Decrement (Data Entry -1) (see MMA RP-018)"/>
+                    <StringItem index="98" value="98 Non-Registered Parameter Number (NRPN) - LSB"/>
+                    <StringItem index="99" value="99 Non-Registered Parameter Number (NRPN) - MSB"/>
+                    <StringItem index="100" value="100 Registered Parameter Number (RPN) - LSB*"/>
+                    <StringItem index="101" value="101 Registered Parameter Number (RPN) - MSB*"/>
+                    <StringItem index="102" value="102 "/>
+                    <StringItem index="103" value="103 "/>
+                    <StringItem index="104" value="104 "/>
+                    <StringItem index="105" value="105 "/>
+                    <StringItem index="106" value="106 "/>
+                    <StringItem index="107" value="107 "/>
+                    <StringItem index="108" value="108 "/>
+                    <StringItem index="109" value="109 "/>
+                    <StringItem index="110" value="110 "/>
+                    <StringItem index="111" value="111 "/>
+                    <StringItem index="112" value="112 "/>
+                    <StringItem index="113" value="113 "/>
+                    <StringItem index="114" value="114 "/>
+                    <StringItem index="115" value="115 "/>
+                    <StringItem index="116" value="116 "/>
+                    <StringItem index="117" value="117 "/>
+                    <StringItem index="118" value="118 "/>
+                    <StringItem index="119" value="119 "/>
+                    <StringItem index="120" value="120 (undefined EWI behavior)"/>
+                    <StringItem index="121" value="121 (undefined EWI behavior)"/>
+                    <StringItem index="122" value="122 (undefined EWI behavior)"/>
+                    <StringItem index="123" value="123 (undefined EWI behavior)"/>
+                    <StringItem index="124" value="124 Pitchbend up"/>
+                    <StringItem index="125" value="125 Pitchbend down"/>
+                    <StringItem index="126" value="126 Pitchbend up-down"/>
+                    <StringItem index="127" value="127 Pitchbend down-up"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bite_cc1_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="bite_cc2_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="128">
+                    <StringItem index="0" value="0 Off"/>
+                    <StringItem index="1" value="1 Modulation Wheel or Lever"/>
+                    <StringItem index="2" value="2 Breath Controller"/>
+                    <StringItem index="3" value="3 "/>
+                    <StringItem index="4" value="4 Foot Controller"/>
+                    <StringItem index="5" value="5 Portamento Time"/>
+                    <StringItem index="6" value="6 Data Entry MSB"/>
+                    <StringItem index="7" value="7 Channel Volume"/>
+                    <StringItem index="8" value="8 Balance"/>
+                    <StringItem index="9" value="9 "/>
+                    <StringItem index="10" value="10 Pan"/>
+                    <StringItem index="11" value="11 Expression Controller"/>
+                    <StringItem index="12" value="12 Effect Control 1"/>
+                    <StringItem index="13" value="13 Effect Control 2"/>
+                    <StringItem index="14" value="14 "/>
+                    <StringItem index="15" value="15 "/>
+                    <StringItem index="16" value="16 General Purpose Controller 1"/>
+                    <StringItem index="17" value="17 General Purpose Controller 2"/>
+                    <StringItem index="18" value="18 General Purpose Controller 3"/>
+                    <StringItem index="19" value="19 General Purpose Controller 4"/>
+                    <StringItem index="20" value="20 "/>
+                    <StringItem index="21" value="21 "/>
+                    <StringItem index="22" value="22 "/>
+                    <StringItem index="23" value="23 "/>
+                    <StringItem index="24" value="24 "/>
+                    <StringItem index="25" value="25 "/>
+                    <StringItem index="26" value="26 "/>
+                    <StringItem index="27" value="27 "/>
+                    <StringItem index="28" value="28 "/>
+                    <StringItem index="29" value="29 "/>
+                    <StringItem index="30" value="30 "/>
+                    <StringItem index="31" value="31 "/>
+                    <StringItem index="32" value="32 LSB for Control 0 (Bank Select)"/>
+                    <StringItem index="33" value="33 LSB for Control 1 (Modulation Wheel or Lever)"/>
+                    <StringItem index="34" value="34 LSB for Control 2 (Breath Controller)"/>
+                    <StringItem index="35" value="35 "/>
+                    <StringItem index="36" value="36 LSB for Control 4 (Foot Controller)"/>
+                    <StringItem index="37" value="37 LSB for Control 5 (Portamento Time)"/>
+                    <StringItem index="38" value="38 LSB for Control 6 (Data Entry)"/>
+                    <StringItem index="39" value="39 LSB for Control 7 (Channel Volume)"/>
+                    <StringItem index="40" value="40 LSB for Control 8 (Balance)"/>
+                    <StringItem index="41" value="41 "/>
+                    <StringItem index="42" value="42 LSB for Control 10 (Pan)"/>
+                    <StringItem index="43" value="43 LSB for Control 11 (Expression Controller)"/>
+                    <StringItem index="44" value="44 LSB for Control 12 (Effect control 1)"/>
+                    <StringItem index="45" value="45 LSB for Control 13 (Effect control 2)"/>
+                    <StringItem index="46" value="46 "/>
+                    <StringItem index="47" value="47 "/>
+                    <StringItem index="48" value="48 LSB for Control 16 (General Purpose Controller 1)"/>
+                    <StringItem index="49" value="49 LSB for Control 17 (General Purpose Controller 2)"/>
+                    <StringItem index="50" value="50 LSB for Control 18 (General Purpose Controller 3)"/>
+                    <StringItem index="51" value="51 LSB for Control 19 (General Purpose Controller 4)"/>
+                    <StringItem index="52" value="52 "/>
+                    <StringItem index="53" value="53 "/>
+                    <StringItem index="54" value="54 "/>
+                    <StringItem index="55" value="55 "/>
+                    <StringItem index="56" value="56 "/>
+                    <StringItem index="57" value="57 "/>
+                    <StringItem index="58" value="58 "/>
+                    <StringItem index="59" value="59 "/>
+                    <StringItem index="60" value="60 "/>
+                    <StringItem index="61" value="61 "/>
+                    <StringItem index="62" value="62 "/>
+                    <StringItem index="63" value="63 "/>
+                    <StringItem index="64" value="64 Damper Pedal on/off (Sustain)"/>
+                    <StringItem index="65" value="65 Portamento On/Off"/>
+                    <StringItem index="66" value="66 Sostenuto On/Off"/>
+                    <StringItem index="67" value="67 Soft Pedal On/Off"/>
+                    <StringItem index="68" value="68 Legato Footswitch"/>
+                    <StringItem index="69" value="69 Hold 2"/>
+                    <StringItem index="70" value="70 Sound Controller 1 (default: Sound Variation)"/>
+                    <StringItem index="71" value="71 Sound Controller 2 (default: Timbre/Harmonic Intens.)"/>
+                    <StringItem index="72" value="72 Sound Controller 3 (default: Release Time)"/>
+                    <StringItem index="73" value="73 Sound Controller 4 (default: Attack Time)"/>
+                    <StringItem index="74" value="74 Sound Controller 5 (default: Brightness)"/>
+                    <StringItem index="75" value="75 Sound Controller 6 (default: Decay Time - see MMA RP-021)"/>
+                    <StringItem index="76" value="76 Sound Controller 7 (default: Vibrato Rate - see MMA RP-021)"/>
+                    <StringItem index="77" value="77 Sound Controller 8 (default: Vibrato Depth - see MMA RP-021)"/>
+                    <StringItem index="78" value="78 Sound Controller 9 (default: Vibrato Delay - see MMA RP-021)"/>
+                    <StringItem index="79" value="79 Sound Controller 10 (default undefined - see MMA RP-021)"/>
+                    <StringItem index="80" value="80 General Purpose Controller 5"/>
+                    <StringItem index="81" value="81 General Purpose Controller 6"/>
+                    <StringItem index="82" value="82 General Purpose Controller 7"/>
+                    <StringItem index="83" value="83 General Purpose Controller 8"/>
+                    <StringItem index="84" value="84 Portamento Control"/>
+                    <StringItem index="85" value="85 "/>
+                    <StringItem index="86" value="86 "/>
+                    <StringItem index="87" value="87 "/>
+                    <StringItem index="88" value="88 "/>
+                    <StringItem index="89" value="89 "/>
+                    <StringItem index="90" value="90 "/>
+                    <StringItem index="91" value="91 Effects 1 Depth (default: Reverb Send Level - see MMA RP-023)"/>
+                    <StringItem index="92" value="92 Effects 2 Depth"/>
+                    <StringItem index="93" value="93 Effects 3 Depth (default: Chorus Send Level - see MMA RP-023)"/>
+                    <StringItem index="94" value="94 Effects 4 Depth"/>
+                    <StringItem index="95" value="95 Effects 5 Depth"/>
+                    <StringItem index="96" value="96 Data Increment (Data Entry +1) (see MMA RP-018)"/>
+                    <StringItem index="97" value="97 Data Decrement (Data Entry -1) (see MMA RP-018)"/>
+                    <StringItem index="98" value="98 Non-Registered Parameter Number (NRPN) - LSB"/>
+                    <StringItem index="99" value="99 Non-Registered Parameter Number (NRPN) - MSB"/>
+                    <StringItem index="100" value="100 Registered Parameter Number (RPN) - LSB*"/>
+                    <StringItem index="101" value="101 Registered Parameter Number (RPN) - MSB*"/>
+                    <StringItem index="102" value="102 "/>
+                    <StringItem index="103" value="103 "/>
+                    <StringItem index="104" value="104 "/>
+                    <StringItem index="105" value="105 "/>
+                    <StringItem index="106" value="106 "/>
+                    <StringItem index="107" value="107 "/>
+                    <StringItem index="108" value="108 "/>
+                    <StringItem index="109" value="109 "/>
+                    <StringItem index="110" value="110 "/>
+                    <StringItem index="111" value="111 "/>
+                    <StringItem index="112" value="112 "/>
+                    <StringItem index="113" value="113 "/>
+                    <StringItem index="114" value="114 "/>
+                    <StringItem index="115" value="115 "/>
+                    <StringItem index="116" value="116 "/>
+                    <StringItem index="117" value="117 "/>
+                    <StringItem index="118" value="118 "/>
+                    <StringItem index="119" value="119 "/>
+                    <StringItem index="120" value="120 (undefined EWI behavior)"/>
+                    <StringItem index="121" value="121 (undefined EWI behavior)"/>
+                    <StringItem index="122" value="122 (undefined EWI behavior)"/>
+                    <StringItem index="123" value="123 (undefined EWI behavior)"/>
+                    <StringItem index="124" value="124 Pitchbend up"/>
+                    <StringItem index="125" value="125 Pitchbend down"/>
+                    <StringItem index="126" value="126 Pitchbend up-down"/>
+                    <StringItem index="127" value="127 Pitchbend down-up"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bite_cc2_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="pitch_bend_up_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="128">
+                    <StringItem index="0" value="0 Off"/>
+                    <StringItem index="1" value="1 Modulation Wheel or Lever"/>
+                    <StringItem index="2" value="2 Breath Controller"/>
+                    <StringItem index="3" value="3 "/>
+                    <StringItem index="4" value="4 Foot Controller"/>
+                    <StringItem index="5" value="5 Portamento Time"/>
+                    <StringItem index="6" value="6 Data Entry MSB"/>
+                    <StringItem index="7" value="7 Channel Volume"/>
+                    <StringItem index="8" value="8 Balance"/>
+                    <StringItem index="9" value="9 "/>
+                    <StringItem index="10" value="10 Pan"/>
+                    <StringItem index="11" value="11 Expression Controller"/>
+                    <StringItem index="12" value="12 Effect Control 1"/>
+                    <StringItem index="13" value="13 Effect Control 2"/>
+                    <StringItem index="14" value="14 "/>
+                    <StringItem index="15" value="15 "/>
+                    <StringItem index="16" value="16 General Purpose Controller 1"/>
+                    <StringItem index="17" value="17 General Purpose Controller 2"/>
+                    <StringItem index="18" value="18 General Purpose Controller 3"/>
+                    <StringItem index="19" value="19 General Purpose Controller 4"/>
+                    <StringItem index="20" value="20 "/>
+                    <StringItem index="21" value="21 "/>
+                    <StringItem index="22" value="22 "/>
+                    <StringItem index="23" value="23 "/>
+                    <StringItem index="24" value="24 "/>
+                    <StringItem index="25" value="25 "/>
+                    <StringItem index="26" value="26 "/>
+                    <StringItem index="27" value="27 "/>
+                    <StringItem index="28" value="28 "/>
+                    <StringItem index="29" value="29 "/>
+                    <StringItem index="30" value="30 "/>
+                    <StringItem index="31" value="31 "/>
+                    <StringItem index="32" value="32 LSB for Control 0 (Bank Select)"/>
+                    <StringItem index="33" value="33 LSB for Control 1 (Modulation Wheel or Lever)"/>
+                    <StringItem index="34" value="34 LSB for Control 2 (Breath Controller)"/>
+                    <StringItem index="35" value="35 "/>
+                    <StringItem index="36" value="36 LSB for Control 4 (Foot Controller)"/>
+                    <StringItem index="37" value="37 LSB for Control 5 (Portamento Time)"/>
+                    <StringItem index="38" value="38 LSB for Control 6 (Data Entry)"/>
+                    <StringItem index="39" value="39 LSB for Control 7 (Channel Volume)"/>
+                    <StringItem index="40" value="40 LSB for Control 8 (Balance)"/>
+                    <StringItem index="41" value="41 "/>
+                    <StringItem index="42" value="42 LSB for Control 10 (Pan)"/>
+                    <StringItem index="43" value="43 LSB for Control 11 (Expression Controller)"/>
+                    <StringItem index="44" value="44 LSB for Control 12 (Effect control 1)"/>
+                    <StringItem index="45" value="45 LSB for Control 13 (Effect control 2)"/>
+                    <StringItem index="46" value="46 "/>
+                    <StringItem index="47" value="47 "/>
+                    <StringItem index="48" value="48 LSB for Control 16 (General Purpose Controller 1)"/>
+                    <StringItem index="49" value="49 LSB for Control 17 (General Purpose Controller 2)"/>
+                    <StringItem index="50" value="50 LSB for Control 18 (General Purpose Controller 3)"/>
+                    <StringItem index="51" value="51 LSB for Control 19 (General Purpose Controller 4)"/>
+                    <StringItem index="52" value="52 "/>
+                    <StringItem index="53" value="53 "/>
+                    <StringItem index="54" value="54 "/>
+                    <StringItem index="55" value="55 "/>
+                    <StringItem index="56" value="56 "/>
+                    <StringItem index="57" value="57 "/>
+                    <StringItem index="58" value="58 "/>
+                    <StringItem index="59" value="59 "/>
+                    <StringItem index="60" value="60 "/>
+                    <StringItem index="61" value="61 "/>
+                    <StringItem index="62" value="62 "/>
+                    <StringItem index="63" value="63 "/>
+                    <StringItem index="64" value="64 Damper Pedal on/off (Sustain)"/>
+                    <StringItem index="65" value="65 Portamento On/Off"/>
+                    <StringItem index="66" value="66 Sostenuto On/Off"/>
+                    <StringItem index="67" value="67 Soft Pedal On/Off"/>
+                    <StringItem index="68" value="68 Legato Footswitch"/>
+                    <StringItem index="69" value="69 Hold 2"/>
+                    <StringItem index="70" value="70 Sound Controller 1 (default: Sound Variation)"/>
+                    <StringItem index="71" value="71 Sound Controller 2 (default: Timbre/Harmonic Intens.)"/>
+                    <StringItem index="72" value="72 Sound Controller 3 (default: Release Time)"/>
+                    <StringItem index="73" value="73 Sound Controller 4 (default: Attack Time)"/>
+                    <StringItem index="74" value="74 Sound Controller 5 (default: Brightness)"/>
+                    <StringItem index="75" value="75 Sound Controller 6 (default: Decay Time - see MMA RP-021)"/>
+                    <StringItem index="76" value="76 Sound Controller 7 (default: Vibrato Rate - see MMA RP-021)"/>
+                    <StringItem index="77" value="77 Sound Controller 8 (default: Vibrato Depth - see MMA RP-021)"/>
+                    <StringItem index="78" value="78 Sound Controller 9 (default: Vibrato Delay - see MMA RP-021)"/>
+                    <StringItem index="79" value="79 Sound Controller 10 (default undefined - see MMA RP-021)"/>
+                    <StringItem index="80" value="80 General Purpose Controller 5"/>
+                    <StringItem index="81" value="81 General Purpose Controller 6"/>
+                    <StringItem index="82" value="82 General Purpose Controller 7"/>
+                    <StringItem index="83" value="83 General Purpose Controller 8"/>
+                    <StringItem index="84" value="84 Portamento Control"/>
+                    <StringItem index="85" value="85 "/>
+                    <StringItem index="86" value="86 "/>
+                    <StringItem index="87" value="87 "/>
+                    <StringItem index="88" value="88 "/>
+                    <StringItem index="89" value="89 "/>
+                    <StringItem index="90" value="90 "/>
+                    <StringItem index="91" value="91 Effects 1 Depth (default: Reverb Send Level - see MMA RP-023)"/>
+                    <StringItem index="92" value="92 Effects 2 Depth"/>
+                    <StringItem index="93" value="93 Effects 3 Depth (default: Chorus Send Level - see MMA RP-023)"/>
+                    <StringItem index="94" value="94 Effects 4 Depth"/>
+                    <StringItem index="95" value="95 Effects 5 Depth"/>
+                    <StringItem index="96" value="96 Data Increment (Data Entry +1) (see MMA RP-018)"/>
+                    <StringItem index="97" value="97 Data Decrement (Data Entry -1) (see MMA RP-018)"/>
+                    <StringItem index="98" value="98 Non-Registered Parameter Number (NRPN) - LSB"/>
+                    <StringItem index="99" value="99 Non-Registered Parameter Number (NRPN) - MSB"/>
+                    <StringItem index="100" value="100 Registered Parameter Number (RPN) - LSB*"/>
+                    <StringItem index="101" value="101 Registered Parameter Number (RPN) - MSB*"/>
+                    <StringItem index="102" value="102 "/>
+                    <StringItem index="103" value="103 "/>
+                    <StringItem index="104" value="104 "/>
+                    <StringItem index="105" value="105 "/>
+                    <StringItem index="106" value="106 "/>
+                    <StringItem index="107" value="107 "/>
+                    <StringItem index="108" value="108 "/>
+                    <StringItem index="109" value="109 "/>
+                    <StringItem index="110" value="110 "/>
+                    <StringItem index="111" value="111 "/>
+                    <StringItem index="112" value="112 "/>
+                    <StringItem index="113" value="113 "/>
+                    <StringItem index="114" value="114 "/>
+                    <StringItem index="115" value="115 "/>
+                    <StringItem index="116" value="116 "/>
+                    <StringItem index="117" value="117 "/>
+                    <StringItem index="118" value="118 "/>
+                    <StringItem index="119" value="119 "/>
+                    <StringItem index="120" value="120 (undefined EWI behavior)"/>
+                    <StringItem index="121" value="121 (undefined EWI behavior)"/>
+                    <StringItem index="122" value="122 (undefined EWI behavior)"/>
+                    <StringItem index="123" value="123 (undefined EWI behavior)"/>
+                    <StringItem index="124" value="124 (undefined EWI behavior)"/>
+                    <StringItem index="125" value="125 (undefined EWI behavior)"/>
+                    <StringItem index="126" value="126 (undefined EWI behavior)"/>
+                    <StringItem index="127" value="127 Pitch bend up"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pitch_bend_up_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="pitch_bend_down_combo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="128">
+                    <StringItem index="0" value="0 Off"/>
+                    <StringItem index="1" value="1 Modulation Wheel or Lever"/>
+                    <StringItem index="2" value="2 Breath Controller"/>
+                    <StringItem index="3" value="3 "/>
+                    <StringItem index="4" value="4 Foot Controller"/>
+                    <StringItem index="5" value="5 Portamento Time"/>
+                    <StringItem index="6" value="6 Data Entry MSB"/>
+                    <StringItem index="7" value="7 Channel Volume"/>
+                    <StringItem index="8" value="8 Balance"/>
+                    <StringItem index="9" value="9 "/>
+                    <StringItem index="10" value="10 Pan"/>
+                    <StringItem index="11" value="11 Expression Controller"/>
+                    <StringItem index="12" value="12 Effect Control 1"/>
+                    <StringItem index="13" value="13 Effect Control 2"/>
+                    <StringItem index="14" value="14 "/>
+                    <StringItem index="15" value="15 "/>
+                    <StringItem index="16" value="16 General Purpose Controller 1"/>
+                    <StringItem index="17" value="17 General Purpose Controller 2"/>
+                    <StringItem index="18" value="18 General Purpose Controller 3"/>
+                    <StringItem index="19" value="19 General Purpose Controller 4"/>
+                    <StringItem index="20" value="20 "/>
+                    <StringItem index="21" value="21 "/>
+                    <StringItem index="22" value="22 "/>
+                    <StringItem index="23" value="23 "/>
+                    <StringItem index="24" value="24 "/>
+                    <StringItem index="25" value="25 "/>
+                    <StringItem index="26" value="26 "/>
+                    <StringItem index="27" value="27 "/>
+                    <StringItem index="28" value="28 "/>
+                    <StringItem index="29" value="29 "/>
+                    <StringItem index="30" value="30 "/>
+                    <StringItem index="31" value="31 "/>
+                    <StringItem index="32" value="32 LSB for Control 0 (Bank Select)"/>
+                    <StringItem index="33" value="33 LSB for Control 1 (Modulation Wheel or Lever)"/>
+                    <StringItem index="34" value="34 LSB for Control 2 (Breath Controller)"/>
+                    <StringItem index="35" value="35 "/>
+                    <StringItem index="36" value="36 LSB for Control 4 (Foot Controller)"/>
+                    <StringItem index="37" value="37 LSB for Control 5 (Portamento Time)"/>
+                    <StringItem index="38" value="38 LSB for Control 6 (Data Entry)"/>
+                    <StringItem index="39" value="39 LSB for Control 7 (Channel Volume)"/>
+                    <StringItem index="40" value="40 LSB for Control 8 (Balance)"/>
+                    <StringItem index="41" value="41 "/>
+                    <StringItem index="42" value="42 LSB for Control 10 (Pan)"/>
+                    <StringItem index="43" value="43 LSB for Control 11 (Expression Controller)"/>
+                    <StringItem index="44" value="44 LSB for Control 12 (Effect control 1)"/>
+                    <StringItem index="45" value="45 LSB for Control 13 (Effect control 2)"/>
+                    <StringItem index="46" value="46 "/>
+                    <StringItem index="47" value="47 "/>
+                    <StringItem index="48" value="48 LSB for Control 16 (General Purpose Controller 1)"/>
+                    <StringItem index="49" value="49 LSB for Control 17 (General Purpose Controller 2)"/>
+                    <StringItem index="50" value="50 LSB for Control 18 (General Purpose Controller 3)"/>
+                    <StringItem index="51" value="51 LSB for Control 19 (General Purpose Controller 4)"/>
+                    <StringItem index="52" value="52 "/>
+                    <StringItem index="53" value="53 "/>
+                    <StringItem index="54" value="54 "/>
+                    <StringItem index="55" value="55 "/>
+                    <StringItem index="56" value="56 "/>
+                    <StringItem index="57" value="57 "/>
+                    <StringItem index="58" value="58 "/>
+                    <StringItem index="59" value="59 "/>
+                    <StringItem index="60" value="60 "/>
+                    <StringItem index="61" value="61 "/>
+                    <StringItem index="62" value="62 "/>
+                    <StringItem index="63" value="63 "/>
+                    <StringItem index="64" value="64 Damper Pedal on/off (Sustain)"/>
+                    <StringItem index="65" value="65 Portamento On/Off"/>
+                    <StringItem index="66" value="66 Sostenuto On/Off"/>
+                    <StringItem index="67" value="67 Soft Pedal On/Off"/>
+                    <StringItem index="68" value="68 Legato Footswitch"/>
+                    <StringItem index="69" value="69 Hold 2"/>
+                    <StringItem index="70" value="70 Sound Controller 1 (default: Sound Variation)"/>
+                    <StringItem index="71" value="71 Sound Controller 2 (default: Timbre/Harmonic Intens.)"/>
+                    <StringItem index="72" value="72 Sound Controller 3 (default: Release Time)"/>
+                    <StringItem index="73" value="73 Sound Controller 4 (default: Attack Time)"/>
+                    <StringItem index="74" value="74 Sound Controller 5 (default: Brightness)"/>
+                    <StringItem index="75" value="75 Sound Controller 6 (default: Decay Time - see MMA RP-021)"/>
+                    <StringItem index="76" value="76 Sound Controller 7 (default: Vibrato Rate - see MMA RP-021)"/>
+                    <StringItem index="77" value="77 Sound Controller 8 (default: Vibrato Depth - see MMA RP-021)"/>
+                    <StringItem index="78" value="78 Sound Controller 9 (default: Vibrato Delay - see MMA RP-021)"/>
+                    <StringItem index="79" value="79 Sound Controller 10 (default undefined - see MMA RP-021)"/>
+                    <StringItem index="80" value="80 General Purpose Controller 5"/>
+                    <StringItem index="81" value="81 General Purpose Controller 6"/>
+                    <StringItem index="82" value="82 General Purpose Controller 7"/>
+                    <StringItem index="83" value="83 General Purpose Controller 8"/>
+                    <StringItem index="84" value="84 Portamento Control"/>
+                    <StringItem index="85" value="85 "/>
+                    <StringItem index="86" value="86 "/>
+                    <StringItem index="87" value="87 "/>
+                    <StringItem index="88" value="88 "/>
+                    <StringItem index="89" value="89 "/>
+                    <StringItem index="90" value="90 "/>
+                    <StringItem index="91" value="91 Effects 1 Depth (default: Reverb Send Level - see MMA RP-023)"/>
+                    <StringItem index="92" value="92 Effects 2 Depth"/>
+                    <StringItem index="93" value="93 Effects 3 Depth (default: Chorus Send Level - see MMA RP-023)"/>
+                    <StringItem index="94" value="94 Effects 4 Depth"/>
+                    <StringItem index="95" value="95 Effects 5 Depth"/>
+                    <StringItem index="96" value="96 Data Increment (Data Entry +1) (see MMA RP-018)"/>
+                    <StringItem index="97" value="97 Data Decrement (Data Entry -1) (see MMA RP-018)"/>
+                    <StringItem index="98" value="98 Non-Registered Parameter Number (NRPN) - LSB"/>
+                    <StringItem index="99" value="99 Non-Registered Parameter Number (NRPN) - MSB"/>
+                    <StringItem index="100" value="100 Registered Parameter Number (RPN) - LSB*"/>
+                    <StringItem index="101" value="101 Registered Parameter Number (RPN) - MSB*"/>
+                    <StringItem index="102" value="102 "/>
+                    <StringItem index="103" value="103 "/>
+                    <StringItem index="104" value="104 "/>
+                    <StringItem index="105" value="105 "/>
+                    <StringItem index="106" value="106 "/>
+                    <StringItem index="107" value="107 "/>
+                    <StringItem index="108" value="108 "/>
+                    <StringItem index="109" value="109 "/>
+                    <StringItem index="110" value="110 "/>
+                    <StringItem index="111" value="111 "/>
+                    <StringItem index="112" value="112 "/>
+                    <StringItem index="113" value="113 "/>
+                    <StringItem index="114" value="114 "/>
+                    <StringItem index="115" value="115 "/>
+                    <StringItem index="116" value="116 "/>
+                    <StringItem index="117" value="117 "/>
+                    <StringItem index="118" value="118 "/>
+                    <StringItem index="119" value="119 "/>
+                    <StringItem index="120" value="120 (undefined EWI behavior)"/>
+                    <StringItem index="121" value="121 (undefined EWI behavior)"/>
+                    <StringItem index="122" value="122 (undefined EWI behavior)"/>
+                    <StringItem index="123" value="123 (undefined EWI behavior)"/>
+                    <StringItem index="124" value="124 (undefined EWI behavior)"/>
+                    <StringItem index="125" value="125 (undefined EWI behavior)"/>
+                    <StringItem index="126" value="126 (undefined EWI behavior)"/>
+                    <StringItem index="127" value="127 Pitch bend down"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pitch_bend_down_comboActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
