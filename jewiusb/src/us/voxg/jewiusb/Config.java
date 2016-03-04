@@ -399,7 +399,7 @@ public class Config {
         }
         throw new IllegalArgumentException("MSB out of range");
     }
-    
+    //test
     /**
      * Provides an array of SysexMessages that describe the current
      * configuration, for sending to the EWI-USB.  (The EWI-USB must be put
