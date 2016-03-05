@@ -39,11 +39,14 @@ public class UtilityReceiver implements javax.sound.midi.Receiver {
 
     @Override
     public void send(MidiMessage message, long timeStamp) {
-        System.out.println(message.toString());
         if (ignore) return;
         if (message instanceof SysexMessage) {
-            System.out.println("is sysex");
-            conf.fromSysex(new SysexMessage[] { (SysexMessage)message });
+            SysexMessage m = (SysexMessage)message;
+            //for (byte b : m.getMessage()) {
+            //    System.out.print(String.format("%02X ", b));
+            //}
+            //System.out.println();
+            conf.fromSysex(new SysexMessage[] { m });
             messagesProcessed++;
         }
     }

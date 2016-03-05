@@ -22,14 +22,17 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiDevice;
 import javax.sound.midi.MidiSystem;
+import javax.sound.midi.MidiUnavailableException;
+import javax.sound.midi.Receiver;
+import javax.sound.midi.ShortMessage;
+import javax.sound.midi.SysexMessage;
+import javax.sound.midi.Transmitter;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -475,9 +478,19 @@ public class JewiGui extends javax.swing.JFrame {
         midi_menu.add(midi_out_menu);
 
         midi_send_item.setText("Send Config to EWI");
+        midi_send_item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                midi_send_itemActionPerformed(evt);
+            }
+        });
         midi_menu.add(midi_send_item);
 
         midi_receive_item.setText("Receive Config From EWI");
+        midi_receive_item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                midi_receive_itemActionPerformed(evt);
+            }
+        });
         midi_menu.add(midi_receive_item);
         midi_menu.add(midi_separator);
 
@@ -670,6 +683,15 @@ public class JewiGui extends javax.swing.JFrame {
                 new ImageIcon(getClass().getResource("/resources/ewi-usb-config.png")));
     }//GEN-LAST:event_help_about_itemActionPerformed
 
+    private void midi_receive_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_midi_receive_itemActionPerformed
+        loadSettingsFromEwi();
+        updateGuiFromConfig();
+    }//GEN-LAST:event_midi_receive_itemActionPerformed
+
+    private void midi_send_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_midi_send_itemActionPerformed
+        this.saveSettingsToEwi();
+    }//GEN-LAST:event_midi_send_itemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -787,6 +809,149 @@ public class JewiGui extends javax.swing.JFrame {
             }
         }
     }
+    
+    private int getGroupSelectedIndex(ButtonGroup group) {
+        int counter = 0;
+        Enumeration e = group.getElements();
+        ButtonModel selectedItem = group.getSelection();
+        while (e.hasMoreElements()) {
+            AbstractButton b = (AbstractButton)e.nextElement();
+            if (b.getModel().equals(selectedItem)) {
+                return counter;
+            }
+            counter++;
+        }
+        return -1;
+    }
+    
+    private void setStatus(String mainText, String toolTipText) {
+        status.setText(mainText);
+        status.setToolTipText(toolTipText);
+    }
+    
+    private void notifyError(String text) {
+        JOptionPane.showMessageDialog(this, text, "ERROR",
+                JOptionPane.ERROR_MESSAGE);
+    }
+    
+    private void notifySuccess(String text) {
+        JOptionPane.showMessageDialog(this, text, "Operation Succeeded",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    private void loadSettingsFromEwi() {
+        String stage = "Requesting configuration from EWI...please wait a moment";
+        setStatus(stage, "working");
+        ShortMessage nrpn1, nrpn2, sysexMode, normalMode;
+        SysexMessage[] requests;
+        try {
+            stage = "Bug in the MIDI message code";
+            nrpn1 = new ShortMessage(0xB0, 0x63, 0x01);
+            nrpn2 = new ShortMessage(0xB0, 0x62, 0x04);
+            sysexMode = new ShortMessage(0xB0, 0x06, 0x20);
+            normalMode = new ShortMessage(0xB0, 0x06, 0x10);
+            requests = new SysexMessage[] {
+                new SysexMessage(new byte[] { (byte)0xF0, (byte)0x47, (byte)0x7f, (byte)0x6d, (byte)0x42, (byte)0, (byte)0, (byte)0xf7 }, 8),
+                new SysexMessage(new byte[] { (byte)0xF0, (byte)0x47, (byte)0x7f, (byte)0x6d, (byte)0x40, (byte)0, (byte)0, (byte)0xf7 }, 8)
+            };
+        } catch (InvalidMidiDataException e) {
+            setStatus(stage, e.toString());
+            return;
+        }
+        int midiIn = getGroupSelectedIndex(midiInGroup);
+        int midiOut = getGroupSelectedIndex(midiOutGroup);
+        if (midiIn < 0 || midiOut < 0) {
+            setStatus("MIDI IN and OUT devices must be selected", "");
+            notifyError(
+                    "<html>Configuration not loaded.</br>"
+                    + "Both MIDI IN and MIDI OUT devices must be selected</br>"
+                    + "in the MIDI menu before attempting to load.</html>"
+            );
+            return;
+        }
+        try (
+                MidiDevice input = MidiSystem.getMidiDevice(infos[midi_ins[midiIn]]);
+                MidiDevice output = MidiSystem.getMidiDevice(infos[midi_outs[midiOut]])
+        ) {
+            stage = "Could not open MIDI devices";
+            input.open();
+            stage = "Could not open MIDI OUT device";
+            output.open();
+            Transmitter midi_in = input.getTransmitter();
+            UtilityReceiver ur = new UtilityReceiver(conf);
+            midi_in.setReceiver(ur);
+            Receiver midi_out = output.getReceiver();
+            for (SysexMessage request : requests) {
+                stage = "Error initializing sysex mode on the EWI";
+                midi_out.send(nrpn1, -1);
+                midi_out.send(nrpn2, -1);
+                midi_out.send(sysexMode, -1);
+                midi_out.send(request, -1);
+                stage = "Error reading sysex response from EWI";
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    // ignore
+                }
+            }
+            midi_out.send(nrpn1, -1);
+            midi_out.send(nrpn2, -1);
+            midi_out.send(normalMode, -1);
+            int processed = ur.getMessagesProcessed();
+            setStatus("Messages processed: " + processed, "");
+            notifySuccess("<html>Configuration loaded from MIDI <br/>" +
+                    processed + " of 2 expected messages received from EWI.");
+        } catch (MidiUnavailableException ex) {
+            setStatus(stage, ex.toString());
+        }
+    }
+    
+    private void saveSettingsToEwi() {
+        String stage = "Sending configuration EWI...please wait";
+        setStatus(stage, "working...");
+        ShortMessage nrpn1, nrpn2, sysexMode, normalMode;
+        try {
+            stage = "Bug in the MIDI message code";
+            nrpn1 = new ShortMessage(0xB0, 0x63, 0x01);
+            nrpn2 = new ShortMessage(0xB0, 0x62, 0x04);
+            sysexMode = new ShortMessage(0xB0, 0x06, 0x20);
+            normalMode = new ShortMessage(0xB0, 0x06, 0x10);
+        } catch (InvalidMidiDataException e) {
+            setStatus(stage, e.toString());
+            return;
+        }
+        SysexMessage[] messages = conf.toSysex();
+        int midiOut = getGroupSelectedIndex(midiOutGroup);
+        if (midiOut < 0) {
+            setStatus("MIDI OUT devices must be selected", "");
+            notifyError(
+                    "<html>Configuration not loaded.</br>"
+                    + "The MIDI OUT device must be selected in the MIDI</br>"
+                    + "menu before attempting to configure the EWI.</html>"
+            );
+            return;
+        }
+        try (MidiDevice output = MidiSystem.getMidiDevice(infos[midi_outs[midiOut]])) {
+            stage = "Error opening MIDI output device";
+            output.open();
+            Receiver midi_out = output.getReceiver();
+            stage = "Error sending MIDI messages to the EWI";
+            for (SysexMessage message : messages) {
+                midi_out.send(nrpn1, -1);
+                midi_out.send(nrpn2, -1);
+                midi_out.send(sysexMode, -1);
+                midi_out.send(message, -1);
+            }
+            midi_out.send(nrpn1, -1);
+            midi_out.send(nrpn2, -1);
+            midi_out.send(normalMode, -1);
+            setStatus("Configuration sent successfully to EWI", "");
+        } catch (MidiUnavailableException ex) {
+            setStatus(stage, ex.toString());
+        }
+        notifySuccess("Successfully configured EWI device.");
+    }
+
     
     private void writeSysex() {
         int result = fileChooser.showSaveDialog(this);

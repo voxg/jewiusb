@@ -27,10 +27,13 @@ import javax.sound.midi.SysexMessage;
 import javax.sound.midi.InvalidMidiDataException;
 
 /**
- *
+ * Represents a complete configuration for the Akai Professional EWI USB.
  * @author Greg Lyons <greglyons50+github@gmail.com>
  */
 public class Config {
+    /**
+     * Creates a configuration with default parameters.
+     */
     public Config() {
         bank0 = new byte[] {
             (byte)0x40,
@@ -59,6 +62,11 @@ public class Config {
         return (int)bank0[0];
     }
 
+    /**
+     * Changes the "Breath Gain" configuration parameter.
+     * @param breathGain value between 0 and 127
+     * @throws IllegalArgumentException if breathGain is out of range
+     */
     public void setBreathGain(int breathGain) {
         if (breathGain < 0 || breathGain > 0x7F)
             throw new IllegalArgumentException("BreathGain must be 0-127");
@@ -69,6 +77,11 @@ public class Config {
         return (int)bank0[1];
     }
 
+    /**
+     * Changes the "Bite Gain" configuration parameter.
+     * @param biteGain  value between 0 and 127
+     * @throws IllegalArgumentException if biteGain is out of range
+     */
     public void setBiteGain(int biteGain) {
         if (biteGain < 0 || biteGain > 0x7F)
             throw new IllegalArgumentException("BiteGain must be 0-127");
@@ -79,6 +92,11 @@ public class Config {
         return (int)bank0[2];
     }
 
+    /**
+     * Changes the "Bite AC Gain" configuration parameter.
+     * @param biteAcGain value between 0 and 127
+     * @throws IllegalArgumentException if biteAcGain is out of range
+     */
     public void setBiteAcGain(int biteAcGain) {
         if (biteAcGain < 0 || biteAcGain > 0x7F)
             throw new IllegalArgumentException("BiteAcGain must be 0-127");
@@ -89,6 +107,11 @@ public class Config {
         return (int)bank0[3];
     }
 
+    /**
+     * Changes the "Pitch Bend Gain" configuration parameter.
+     * @param pitchBendGain value between 0 and 127
+     * @throws IllegalArgumentException if pitchBendGain is out of range
+     */
     public void setPitchBendGain(int pitchBendGain) {
         if (pitchBendGain < 0 || pitchBendGain > 0x7F)
             throw new IllegalArgumentException("PitchBendGain must be 0-127");
@@ -99,6 +122,11 @@ public class Config {
         return (int)bank0[4];
     }
 
+    /**
+     * Changes the "Key Delay" configuration parameter.
+     * @param keyDelay value between 0 and 15
+     * @throws IllegalArgumentException if keyDelay is out of range
+     */
     public void setKeyDelay(int keyDelay) {
         if (keyDelay < 0 || keyDelay > 0xF)
             throw new IllegalArgumentException("KeyDelay must be 0-15");
@@ -109,6 +137,12 @@ public class Config {
         return (int)bank0[5];
     }
 
+    /**
+     * Sets an unknown (possibly unused) configuration parameter in bank 0
+     * ("Setup" section).
+     * @param unknown value between 0 and 127
+     * @throws IllegalArgumentException if unknown is out of range
+     */
     public void setUnknown(int unknown) {
         if (unknown < 0 || unknown > 0x7F)
             throw new IllegalArgumentException("Unknown must be 0-127");
@@ -119,6 +153,12 @@ public class Config {
         return (int)bank2[0];
     }
 
+    /**
+     * Sets the "MIDI Channel" parameter in range 0 to 15 (vs. 1 to 16 in
+     * end-user nomenclature).
+     * @param midiChannel value between 0 and 15
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setMidiChannel(int midiChannel) {
         if (midiChannel < 0 || midiChannel > 15)
             throw new IllegalArgumentException("MidiChannel must be 0-15");
@@ -129,6 +169,11 @@ public class Config {
         return (int)bank2[1];
     }
 
+    /**
+     * Sets the "Fingering" parameter
+     * @param fingering value between 0 and 5
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setFingering(int fingering) {
         if (fingering < 0 || fingering > 5)
             throw new IllegalArgumentException("Fingering must be 0-5");
@@ -139,6 +184,12 @@ public class Config {
         return (int)bank2[2];
     }
 
+    /**
+     * Sets the "Transpose" parameter to a value between 34 and 93 inclusive.
+     * 64 is the default, C4.
+     * @param transpose value between 34 and 93
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setTranspose(int transpose) {
         if (transpose < 0x22 || transpose > 0x5D)
             throw new IllegalArgumentException("Transpose must be 34-93");
@@ -149,6 +200,14 @@ public class Config {
         return (int)bank2[3];
     }
 
+    /**
+     * Sets the "Velocity" parameter. 0 means the velocity of note-on messages
+     * will be governed by the breath sensor and "Breath Gain" parameter.  Any
+     * other value means that the velocity of note-on messages will be fixed to
+     * the value set.
+     * @param velocity value between 0 and 127
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setVelocity(int velocity) {
         if (velocity < 0 || velocity > 0x7F)
             throw new IllegalArgumentException("Velocity must be 0-127");
@@ -159,6 +218,12 @@ public class Config {
         return (int)bank2[4];
     }
 
+    /**
+     * Sets the "Breath CC 1" parameter.
+     * Special values are described in the end user help document
+     * @param breathCC1 value between 0 and 127
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setBreathCC1(int breathCC1) {
         if (breathCC1 < 0 || breathCC1 > 0x7F)
             throw new IllegalArgumentException("BreathCC1 must be 0-127");
@@ -169,6 +234,12 @@ public class Config {
         return (int)bank2[5];
     }
 
+    /**
+     * Sets the "Breath CC 2" parameter.
+     * Special values are described in the end user help document
+     * @param breathCC2 value between 0 and 127
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setBreathCC2(int breathCC2) {
         if (breathCC2 < 0 || breathCC2 > 0x7F)
             throw new IllegalArgumentException("BreathCC2 must be 0-127");
@@ -179,6 +250,12 @@ public class Config {
         return (int)bank2[6];
     }
 
+    /**
+     * Sets another unknown (possibly unused) parameter, this time in bank 2
+     * ("Controller" section).
+     * @param unknown2 a 7-bit value 
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setUnknown2(int unknown2) {
         if (unknown2 < 0 || unknown2 > 0x7F)
             throw new IllegalArgumentException("Unknown2 must be 0-127");
@@ -189,6 +266,12 @@ public class Config {
         return (int)bank2[7];
     }
 
+    /**
+     * Sets the "Bite CC 1" parameter.
+     * Special values are described in the end user help document
+     * @param biteCC1 value between 0 and 127
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setBiteCC1(int biteCC1) {
         if (biteCC1 < 0 || biteCC1 > 0x7F)
             throw new IllegalArgumentException("BiteCC1 must be 0-127");
@@ -199,6 +282,12 @@ public class Config {
         return (int)bank2[8];
     }
 
+    /**
+     * Sets the "Bite CC 2" parameter.
+     * Special values are described in the end user help document
+     * @param biteCC2 value between 0 and 127
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setBiteCC2(int biteCC2) {
         if (biteCC2 < 0 || biteCC2 > 0x7F)
             throw new IllegalArgumentException("BiteCC2 must be 0-127");
@@ -209,6 +298,12 @@ public class Config {
         return (int)bank2[9];
     }
 
+    /**
+     * Sets the "Pitch Bend Up" parameter.
+     * Special values are described in the end user help document
+     * @param pitchBendUp value between 0 and 127
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setPitchBendUp(int pitchBendUp) {
         if (pitchBendUp < 0 || pitchBendUp > 0x7F)
             throw new IllegalArgumentException("PitchBendUp must be 0-127");
@@ -219,112 +314,18 @@ public class Config {
         return (int)bank2[0x0A];
     }
 
+    /**
+     * Sets the "Pitch Bend Down" parameter.
+     * Special values are described in the end user help document
+     * @param pitchBendDown value between 0 and 127
+     * @throws IllegalArgumentException if requested value is out of range
+     */
     public void setPitchBendDown(int pitchBendDown) {
         if (pitchBendDown < 0 || pitchBendDown > 0x7F)
             throw new IllegalArgumentException("PitchBendDown must be 0-127");
         bank2[0x0A] = (byte)pitchBendDown;
     }
     
-    private class Item {
-        public Item(String name, int msb, int lsb, int defaultValue, int min, int max) {
-            this.name = name;
-            this.msb = msb;
-            this.lsb = lsb;
-            this.value = defaultValue;
-            this.min = min;
-            this.max = max;
-        }
-        private final String name;
-        private final int msb, lsb, min, max;
-        private int value;
-
-        public void setValue(int v) {
-            if (min > v || v > max) {
-                System.out.println("Bad call to setValue()");
-                System.out.println(toString());
-                System.out.println(v);
-                throw new IllegalArgumentException(name+" value out of range");
-            }
-            value = v;
-        }
-        public byte getValue() {
-            return (byte)value;
-        }
-        @Override
-        public String toString() {
-            return "jewiusb.Config.Item(" + name + ", " + msb + ", " + lsb +
-                    ", " + value + ", " + min + ", " + max + ")";
-        }
-    }
-    
-    private final Item[] items = {
-            new Item("breath_gain", 0, 0, 64, 0, 127),
-            new Item("bite_gain", 0, 1, 64, 0, 127),
-            new Item("bite_ac_gain", 0, 2, 64, 0, 127),
-            new Item("pitch_bend_gain", 0, 3, 64, 0, 127),
-            new Item("key_delay", 0, 4, 8, 0, 15),
-            new Item("unknown", 0, 5, 127, 0, 127),
-            new Item("midi_channel", 2, 0, 0, 0, 15),
-            new Item("fingering", 2, 1, 0, 0, 5),
-            new Item("transpose", 2, 2, 64, 0, 127),
-            new Item("velocity", 2, 3, 32, 0, 127),
-            new Item("breath_cc1", 2, 4, 2, 0, 127),
-            new Item("breath_cc2", 2, 5, 0, 0, 127),
-            new Item("unknown2", 2, 6, 0, 0, 127),
-            new Item("bite_cc1", 2, 7, 127, 0, 127),
-            new Item("bite_cc2", 2, 8, 0, 0, 127),
-            new Item("pitch_bend_up", 2, 9, 127, 0, 127),
-            new Item("pitch_bend_down", 2, 10, 127, 0, 127)
-    };
-
-    /**
-     * Get the total number of configuration parameters
-     * @return the number of parameters
-     */
-    public int maxItems() {
-        return items.length;
-    }
-    /**
-     * Returns the name of the configuration parameter for the 0-based location
-     * given by the index parameter
-     * @param index the location of the parameter, 0-based
-     * @return the name of the parameter
-     */
-    public String getName(int index) {
-        return items[index].name;
-    }
-    /**
-     * Returns the current value of the configuration parameter at the 0-based
-     * location provided
-     * @param index the location of the parameter, 0-based
-     * @return the current value
-     */
-    public int getValue(int index) {
-        return items[index].value;
-    }
-    /**
-     * Sets the value of the configuration parameter at the location provided.
-     * An IllegalArgumentException may be thrown if the value is out of range.
-     * @param index the location of the parameter, 0-based
-     * @param val the value to set
-     */
-    public void setValue(int index, int val) {
-        items[index].setValue(val);
-    }
-    /**
-     * Sets the value of the configuration parameter with the name provided.
-     * An IllegalArgumentException may be thrown if the value is out of range.
-     * @param name the name of the parameter
-     * @param val the value to set
-     */
-    public void setValue(String name, int val) {
-        for (Item item : items) {
-            if (item.name.equals(name)) {
-                item.setValue(val);
-            }
-        }
-    }
-
     /**
      * Sets the value of the configuration parameter at the EWI-USB-specific
      * address defined by msb and lsb.  (The addresses can be found online.)
@@ -334,26 +335,27 @@ public class Config {
      * @param val the value
      */
     public void setValue(int msb, int lsb, int val) {
+        //System.out.println("setValue("+msb+", "+lsb+", "+val+")");
         if (msb == 0) {
             switch (lsb) {
                 case 0:
                     setBreathGain(val);
-                    break;
+                    return;
                 case 1:
                     setBiteGain(val);
-                    break;
+                    return;
                 case 2:
                     setBiteAcGain(val);
-                    break;
+                    return;
                 case 3:
                     setPitchBendGain(val);
-                    break;
+                    return;
                 case 4:
                     setKeyDelay(val);
-                    break;
+                    return;
                 case 5:
                     setUnknown(val);
-                    break;
+                    return;
                 default:
                     throw new IllegalArgumentException("LSB out of range");
             }
@@ -362,37 +364,37 @@ public class Config {
             switch (lsb) {
                 case 0:
                     setMidiChannel(val);
-                    break;
+                    return;
                 case 1:
                     setFingering(val);
-                    break;
+                    return;
                 case 2:
                     setTranspose(val);
-                    break;
+                    return;
                 case 3:
                     setVelocity(val);
-                    break;
+                    return;
                 case 4:
                     setBreathCC1(val);
-                    break;
+                    return;
                 case 5:
                     setBreathCC2(val);
-                    break;
+                    return;
                 case 6:
                     setUnknown2(val);
-                    break;
+                    return;
                 case 7:
                     setBiteCC1(val);
-                    break;
+                    return;
                 case 8:
                     setBiteCC2(val);
-                    break;
+                    return;
                 case 9:
                     setPitchBendUp(val);
-                    break;
+                    return;
                 case 10:
                     setPitchBendDown(val);
-                    break;
+                    return;
                 default:
                     throw new IllegalArgumentException("LSB out of range");
             }
@@ -525,6 +527,6 @@ public class Config {
         }
     }
     
-    private byte[] bank0;
-    private byte[] bank2;
+    private final byte[] bank0;
+    private final byte[] bank2;
 }

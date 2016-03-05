@@ -62,11 +62,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Send Config to EWI"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="midi_send_itemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="midi_receive_item">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Receive Config From EWI"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="midi_receive_itemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="midi_separator">
             </MenuItem>
